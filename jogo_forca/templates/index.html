@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    {% if novo_jogo %}
+        <form method="POST" action="/">
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome">
+            <input type="submit" value="Iniciar Jogo">
+        </form>
+    {% else %}
+        <h1>Olá, {{ nome_jogador }}!</h1>
+        <h1>Jogo da Forca</h1>
+        <p>{{ mensagem }}</p>
+        <p>Palavra: {{ palavra_secreta }}</p>
+        <p>Chances: {{ chances }}</p>
+        <form method="POST" action="/guess">
+            <input type="text" name="letra">
+            <input type="submit" value="Chutar">
+        </form>
+        <form method="POST" action="/reiniciar">
+            <input type="submit" value="Reiniciar">
+        </form>
+    {% endif %}
+
