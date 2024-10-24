@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="index.css">
     <title>Jogo da Forca</title>
 </head>
 <body>
+
+    <div class="animacao">
+        <div class="bone {{boneco_estado}}"></div>
+        <div class="pedra"></div>
+    </div>
+
+    <div class="correndo" ></div>
+
     {% if novo_jogo %}
         <form method="POST" action="/">
             <label for="nome">Digite seu nome:</label>
