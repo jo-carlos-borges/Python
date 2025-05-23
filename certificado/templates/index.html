@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Certificado</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .valid { color: green; }
+        .invalid { color: red; }
+        .card { 
+            border: 1px solid #ccc; 
+            padding: 20px; 
+            max-width: 600px; 
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <h1>Validação de Certificado</h1>
+    {% if nome %}
+        <p><strong>Nome:</strong> {{ nome }}</p>
+        <p><strong>Evento:</strong> {{ evento }}</p>
+        <p><strong>Data de Registro:</strong> {{ data }}</p>
+        <p class="{% if valido %}valid{% else %}invalid{% endif %}">
+            Status: {% if valido %}VÁLIDO{% else %}INVÁLIDO{% endif %}
+        </p>
+        <small>ID: {{ id_participante }}</small>
+    {% else %}
+        <p class="invalid">Certificado não encontrado!</p>
+    {% endif %}
+</div>
+</body>
+</html>

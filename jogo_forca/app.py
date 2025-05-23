@@ -12,7 +12,7 @@ def iniciar_jogo():
     lista_palavras = ["amigos", "programação", "computador", "jogos", "musicas", "guarda-chuva"]
     palavra_maquina = random.choice(lista_palavras)
     chances = 10
-    palavra_secreta = "_ " * len(palavra_maquina)
+    palavra_secreta = "-" * len(palavra_maquina)
     return palavra_maquina, chances, palavra_secreta
 
 def encaixar_letra(letra_esc, palavra_maquina, palavra_secreta):
