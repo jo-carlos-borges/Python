@@ -84,7 +84,7 @@ def guess():
     session['chances'] = chances
     session['palavra_secreta'] = palavra_secreta
 
-    return render_template('index.html', palavra_secreta=palavra_secreta, chances=chances, mensagem=mensagem)
+    return render_template('index.html', palavra_secreta=palavra_secreta, chances=chances, mensagem=mensagem, boneco_estado=boneco_estado)
 
 @app.route('/reiniciar', methods=['POST'])
 def reiniciar():
